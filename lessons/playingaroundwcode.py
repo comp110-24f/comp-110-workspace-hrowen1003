@@ -1,7 +1,5 @@
 """My file to play around with python"""
 
-import math
-
 
 def sqrfinder(x: int) -> str:
     """Finds a close approximation to the square root of x"""
@@ -13,6 +11,8 @@ def sqrfinder(x: int) -> str:
     return f"The square root of x is approx. {g}"
 
 
-print(sqrfinder(x=16))
+def testing(param1: float) -> float:
+    return param1 * 3
 
-print(math.sqrt(16))
+
+print(testing(param1=2))
