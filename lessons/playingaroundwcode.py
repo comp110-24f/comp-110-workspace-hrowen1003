@@ -1,5 +1,9 @@
 """My file to play around with python"""
 
+from math import sqrt
+
+print(sqrt(4))
+
 
 def sqrfinder(x: int) -> str:
     """Finds a close approximation to the square root of x"""
