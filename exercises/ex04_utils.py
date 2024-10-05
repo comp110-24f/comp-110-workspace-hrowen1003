@@ -5,6 +5,8 @@ __author__ = "730722910"
 
 def all(int_list: list[int], num: int) -> bool:
     """Checks if all of the elements in int_list equal num"""
+    if len(int_list) == 0:
+        return False
     idx: int = 0
     while idx < len(int_list):
         if (
