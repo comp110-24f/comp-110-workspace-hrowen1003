@@ -7,12 +7,12 @@ words: list = ["ankle", "shoulder"]
 defins: list = ["just above foot", "next to arm"]
 
 
-super_list: list = [words, defins]
+# super_list: list = [words, defins]
 
-print(super_list)
-print(super_list[0])
-print(super_list[0][0])
-print(super_list[0][0][0])
+# print(super_list)
+# print(super_list[0])
+# print(super_list[0][0])
+# print(super_list[0][0][0])
 
 
 def main() -> None:
