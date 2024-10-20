@@ -10,7 +10,8 @@ defs: list[str] = []
 def input_pair(num: int) -> None:
     time.sleep(1)
     os.system("clear")
-    idx: int = 0
+    idx: int = len(wrds)
+    num += len(wrds)
     while idx < num:
         print(f"<====Term: {idx+1}====>")
         wrds.append(input("Word --> "))

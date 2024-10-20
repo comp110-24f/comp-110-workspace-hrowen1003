@@ -28,6 +28,27 @@ total_ltrs: list[list] = [Q, U, I, Z, L, E, T, front_emph, back_emph]
 # =====
 # **=-
 
+# |^^\
+# |   \
+# |   /
+# |__/
+D = ["|^^\\ ", "|   \\", "|   /", "|__/ "]
+# |   |
+# \   /
+# | |
+#  V
+V = ["|   |", "\\   /", " | | ", "  V  "]
+# |   |
+# |\  |
+# | \ |
+# |  \|
+N = ["|   |", "|\\  |", "| \\ |", "|  \\|"]
+#  |
+#  |
+#  |
+#  o
+excl = ["  |  ", "  |  ", "  |  ", "  o  "]
+
 idx: int = 0
 current_line: str = ""
 while idx < len(Q):
@@ -65,7 +86,7 @@ def listify(ltrs: str) -> list:
     return list_ltrs
 
 
-def greet() -> None:
+def titleify() -> None:
     os.system("clear")
     print("Welcome user! Booting up...")
     time.sleep(2)
@@ -79,10 +100,9 @@ def greet() -> None:
     # ltrs: str = input("What would you like to print ~fancily~?")
     # add function to check validity of characters input
     # print(listify(ltrs))
-    print_word([front_emph, sml_blank, Q, U, I, Z, L, E, T, sml_blank, back_emph])
+    print_word([front_emph, sml_blank, D, E, V, E, N, excl, sml_blank, back_emph])
     time.sleep(1)
-    print("\n~~The cramming begins~~")
 
 
 if __name__ == "__main__":
-    greet()
+    titleify()

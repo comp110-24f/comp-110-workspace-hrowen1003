@@ -2,7 +2,7 @@
 
 __author__ = "730722910"
 
-from personal.quizlet.welcome_scr import greet
+from personal.quizlet.welcome_scr import titleify
 from personal.quizlet.input_trm import initiate_input
 
 # =====Notes on intended purposes & possible abstractions:====
@@ -16,7 +16,7 @@ from personal.quizlet.input_trm import initiate_input
 
 
 def main() -> None:
-    greet()
+    titleify()
     initiate_input()
     while input("Would you like to add any more terms? (y/n) ") == "y":
         initiate_input()
