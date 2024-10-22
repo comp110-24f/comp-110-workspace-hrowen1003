@@ -86,17 +86,17 @@ def listify(ltrs: str) -> list:
     return list_ltrs
 
 
-def titleify() -> None:
-    os.system("clear")
+def loading_wait() -> None:
     for sec in range(0, 9):
         dots: str = "." * (sec % 3 + 1)
         print(dots)
         time.sleep(0.2)
         os.system("clear")
-    # print("Your list of available chars is: " + str(total_ltrs))  # FIX THIS AH
-    # ltrs: str = input("What would you like to print ~fancily~?")
-    # add function to check validity of characters input
-    # print(listify(ltrs))
+
+
+def titleify() -> None:
+    os.system("clear")
+    # loading_wait()
     print_word([front_emph, sml_blank, Q, U, I, Z, L, E, T, excl, sml_blank, back_emph])
     time.sleep(1)
 
