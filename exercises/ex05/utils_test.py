@@ -82,7 +82,7 @@ def test_add_at_index_return() -> None:
     """Tests that add_at_index returns None"""
     test_list: list[int] = [1, 2, 3, 4, 5, 6, 6]
     assert (
-        add_at_index(input=test_list, num=7, idx=1) == None
+        add_at_index(input=test_list, num=7, idx=1) is None
     )  # VS Code wants by to use "is" but I don't know if we're allowed to use that yet
 
 
