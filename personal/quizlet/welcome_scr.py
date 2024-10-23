@@ -12,7 +12,7 @@ front_emph: list[str] = [" -=**", "<====", "<====", " -=**"]
 back_emph: list[str] = ["**=-", "====>", "====>", "**=-"]
 blank: list[str] = ["     ", "     ", "     ", "     "]
 sml_blank: list[str] = ["  ", "  ", "  ", "  "]
-total_ltrs: list[list] = [Q, U, I, Z, L, E, T, front_emph, back_emph]
+
 # /^^^\ |   | ^^T^^ ^^^/^ |     |^^^^ ^^T^^
 # |   | |   |   |     /   |     |____   |
 # | \ | |   |   |    /    |     |       |
@@ -35,8 +35,8 @@ total_ltrs: list[list] = [Q, U, I, Z, L, E, T, front_emph, back_emph]
 D = ["|^^\\ ", "|   \\", "|   /", "|__/ "]
 # |   |
 # \   /
-# | |
-#  V
+#  | |
+#   V
 V = ["|   |", "\\   /", " | | ", "  V  "]
 # |   |
 # |\  |
@@ -48,6 +48,42 @@ N = ["|   |", "|\\  |", "| \\ |", "|  \\|"]
 #  |
 #  o
 excl = ["  |  ", "  |  ", "  |  ", "  o  "]
+# |^^^\
+# |___/
+# |
+# |
+P = ["|^^\\", "|__/", "|    ", "|    "]
+# \   /
+#  \ /
+#   |
+#   |
+Y = ["\\   /", " \\ / ", " |  ", " |  "]
+dash = ["    ", "____", "    ", "    "]
+# |^^\
+# |__/
+# | \
+# |  \
+R = ["|^^\\", "|__/", "| \\ ", "|  \\"]
+
+total_ltrs: list[list] = [
+    Q,
+    U,
+    I,
+    Z,
+    L,
+    E,
+    T,
+    front_emph,
+    back_emph,
+    blank,
+    sml_blank,
+    D,
+    V,
+    N,
+    P,
+    Y,
+    dash,
+]
 
 idx: int = 0
 current_line: str = ""
@@ -75,6 +111,8 @@ def print_word(ltrs: list[list]) -> None:
 
 
 def listify(ltrs: str) -> list:
+    """function intended to allow for a user to chose what letters to print big"""
+    # doesn't work currently, but isn't called anywhere
     list_ltrs: list = []
     for char in ltrs:
         idx = 0
@@ -97,7 +135,26 @@ def loading_wait() -> None:
 def titleify() -> None:
     os.system("clear")
     # loading_wait()
-    print_word([front_emph, sml_blank, Q, U, I, Z, L, E, T, excl, sml_blank, back_emph])
+    print_word(
+        [
+            front_emph,
+            sml_blank,
+            P,
+            Y,
+            dash,
+            Q,
+            U,
+            I,
+            Z,
+            L,
+            E,
+            T,
+            excl,
+            sml_blank,
+            back_emph,
+        ]
+    )
+    print("*legally distinct*\n\n")
     time.sleep(1)
 
 

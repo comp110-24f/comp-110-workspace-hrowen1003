@@ -12,19 +12,24 @@ from personal.quizlet.preload_terms import (
 from personal.quizlet.quiz import quiz
 
 # =====Notes on intended purposes & possible abstractions:====
+# 1. Option for flashcard-style quizing
+# 7. make it look prettier :)
+# 3. Ideally feature to store input values in an external file
+# 6. function to edit existing lists of defs/words after being created
+
+# =====COMPLETED TASKS :) =========
 # 1. Feature to quiz user
 # 2.store the answers they got wrong for future rounds
-# 3. Ideally feature to story input values in an external file
 # 4.function to turn a long input seperated by commas into a list of defs/words
-# 5. function to grade user
-# 6. function to edit existing lists of defs/words after being created
+#     *implemented different way than anticipated
 # 7. make it look pretty :)
+# 5. function to grade user
 
 
 def main() -> None:
     titleify()
     explain_set_choice()
-    pick_term_set()
+    quiz(pick_term_set())
     return None
 
 
@@ -56,7 +61,7 @@ def find_preload_set(set_choice: str) -> dict[str, str]:
     # if you add more preload terms sets, add if statements here!!!
 
 
-def pick_term_set() -> None:
+def pick_term_set() -> dict[str, str]:
     choice_made: bool = False
     while not choice_made:
         set_choice = input("What would you like to do? ")
@@ -64,13 +69,13 @@ def pick_term_set() -> None:
             if set_choice == term_set:
                 choice_made = True
                 print(f"You chose {set_choice}")
-                quiz(find_preload_set(set_choice))
+                return find_preload_set(set_choice)
         if not choice_made and set_choice == "input":
             choice_made = True
             initiate_input()
             while input("Would you like to add any more terms? (y/n) ") == "y":
                 initiate_input()
-            quiz(new_terms)
+            return new_terms
         elif not choice_made:
             print(
                 "I do not understand. Please type either 'input' or the name of a set"

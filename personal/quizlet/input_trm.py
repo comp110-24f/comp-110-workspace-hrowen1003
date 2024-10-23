@@ -13,7 +13,8 @@ def input_pair(add_count: int) -> None:
     add_count += len(new_terms)
     while idx < add_count:
         print(f"<====Term: {idx+1}====>")
-        new_terms[input("Word --> ")] = input("Definition --> ")
+        wrd: str = input("Word --> ")
+        new_terms[wrd] = input("Definition --> ")
         idx += 1
     print("=" * len(f"<====Term: {idx+1}====>"))
 
