@@ -23,3 +23,5 @@ def shout(input_text: str) -> str:
 
 
 print(shout(input("What would you like me to scream? ")))
+
+lst = [1, 2, 3]  # Global object (mutable)

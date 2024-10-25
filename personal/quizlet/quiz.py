@@ -90,11 +90,14 @@ def quiz(term_set: dict[str, str]) -> None:
     print("The terms will be shuffled")
     print("You will be retested on any you get wrong in future rounds\n")
     mode: str = input("Flashcard Mode or Writing Mode? (flash/writing): ")
-    mode_valid: bool = False
-    while not mode_valid:
-        if mode != "flash" or "writing":
-            mode_valid = True
+    mode_valid: bool = True
+    if mode != "flash" and mode != "writing":
+        mode_valid = False
+    while not mode_valid:  # FIX BUG I HAVE HERE HERE
+        if mode != "flash" and mode != "writing":
             mode = input("I don't understand. Please type 'flash' or 'writing': ")
+        else:
+            mode_valid = True
     if mode == "flash":
         flash_mode_quiz(term_set)
     if mode == "writing":
